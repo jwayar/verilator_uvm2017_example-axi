@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rmdb>
+  <runnable name="regression" type="group">
+    <parameters>
+      <parameter name="RUNDIR">(%RMDBDIR%)</parameter>
+      <parameter name="mergefile">(%RMDBDIR%)/merge.ucdb</parameter>
+      <parameter name="ucdbfile">(%TASKDIR%)/coverage.ucdb</parameter>
+    </parameters>
+    <members>
+      <member>group_amd_master_custom_slave</member>
+      <member>group_custom_master_amd_slave</member>
+    </members>
+    <postScript>
+      <command>vcover report -html -source -details -assert -directive -cvg -code bcefst -verbose -threshL 50 -threshH 90 (%mergefile%)</command>
+    </postScript>
+  </runnable>
+
+  <runnable name="group_amd_master_custom_slave" type="group" repeat="10">
+    <members>
+      <member>axis_tb_main_test</member>
+    </members>
+    <execScript mintimeout="1800">
+      <command>cd (%RUNDIR%)/tb_axis_amd_master_custom_slave</command>
+      <command>do sim.do (%INSTANCE%)</command>
+      
+      <command>coverage attribute -name TESTNAME -value (%INSTANCE%)_AMD_M_it(%group_amd_master_custom_slave.ITERATION%)</command>
+      <command>coverage save (%ucdbfile%)</command>
+      <command>if {[file exists (%mergefile%)]} {</command>
+      <command>  vcover merge -64 (%mergefile%) (%ucdbfile%) (%mergefile%)</command>
+      <command>} else {</command>
+      <command>  file copy (%ucdbfile%) (%mergefile%)</command>
+      <command>}</command>
+    </execScript>
+  </runnable>
+
+  <runnable name="group_custom_master_amd_slave" type="group" repeat="10">
+    <members>
+      <member>axis_tb_main_test</member>
+    </members>
+    <execScript mintimeout="1800">
+      <command>cd (%RUNDIR%)/tb_axis_custom_master_amd_slave</command>
+      <command>do sim.do (%INSTANCE%)</command>
+      
+      <command>coverage attribute -name TESTNAME -value (%INSTANCE%)_CUST_M_it(%group_custom_master_amd_slave.ITERATION%)</command>
+      <command>coverage save (%ucdbfile%)</command>
+      <command>if {[file exists (%mergefile%)]} {</command>
+      <command>  vcover merge -64 (%mergefile%) (%ucdbfile%) (%mergefile%)</command>
+      <command>} else {</command>
+      <command>  file copy (%ucdbfile%) (%mergefile%)</command>
+      <command>}</command>
+    </execScript>
+  </runnable>
+
+  <runnable name="axis_tb_main_test" type="task"> </runnable>
+
+</rmdb>

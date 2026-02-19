@@ -1,0 +1,4 @@
+[submodule "verilator_uvm_2017"]
+	path = verilator_uvm_2017
+	url = https://gitlab.emtech.com.ar/cicd_template/verilator_uvm_2017
+	branch = to_axi-agent

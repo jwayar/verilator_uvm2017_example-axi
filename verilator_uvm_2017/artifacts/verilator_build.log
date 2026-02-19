@@ -1,0 +1,63 @@
+%Warning-TIMESCALEMOD: /app/1800.2-2017-1.0/src/uvm_pkg.sv:28:9: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   28 | package uvm_pkg;
+      |         ^~~~~~~
+                       /home/debian/project/emtech/repo_verilator_uvm_2017_example-axi/rtl/axi_stream_master_wrapper.v:13:8: ... Location of module with timescale
+   13 | module axi_stream_master_wrapper
+      |        ^~~~~~~~~~~~~~~~~~~~~~~~~
+                       ... For warning description see https://verilator.org/warn/TIMESCALEMOD?v=5.042
+                       ... Use "/* verilator lint_off TIMESCALEMOD */" and lint_on around source to disable this message.
+%Warning-REALCVT: /home/debian/project/emtech/repo_verilator_uvm_2017_example-axi/tb_axis_amd_master_custom_slave/axis_tb_defn_pkg.sv:41:38: Implicit conversion of real to integer
+   41 |   localparam time CLK_PERIOD_NS = 1s / CLK_FREQ_HZ;
+      |                                      ^
+                  ... For warning description see https://verilator.org/warn/REALCVT?v=5.042
+                  ... Use "/* verilator lint_off REALCVT */" and lint_on around source to disable this message.
+%Warning-WIDTHEXPAND: /home/debian/project/emtech/repo_verilator_uvm_2017_example-axi/tb_axis_amd_master_custom_slave/axis_tb_defn_pkg.sv:48:18: Operator VAR 'AXIS_MASTER_SIGNAL_SET' expects 32 bits on the Initial value, but Initial value's VARREF 'C_XIL_AXI4STREAM_SIGNAL_SET' generates 8 bits.
+   48 |   localparam int AXIS_MASTER_SIGNAL_SET = C_XIL_AXI4STREAM_SIGNAL_SET;
+      |                  ^~~~~~~~~~~~~~~~~~~~~~
+                      ... For warning description see https://verilator.org/warn/WIDTHEXPAND?v=5.042
+                      ... Use "/* verilator lint_off WIDTHEXPAND */" and lint_on around source to disable this message.
+%Warning-WIDTHTRUNC: /home/debian/project/emtech/repo_verilator_uvm_2017_example-axi/Vip/amd_axi_stream_vip/xillinxs_vip/axi_vip/axi4stream_vip_if.sv:74:31: Operator VAR 'C_AXI4STREAM_SIGNAL_SET' expects 8 bits on the Initial value, but Initial value's CONST '32'hff' generates 32 bits.
+   74 |       xil_axi4stream_sigset_t C_AXI4STREAM_SIGNAL_SET         = 8'h0,
+      |                               ^~~~~~~~~~~~~~~~~~~~~~~
+                     ... For warning description see https://verilator.org/warn/WIDTHTRUNC?v=5.042
+                     ... Use "/* verilator lint_off WIDTHTRUNC */" and lint_on around source to disable this message.
+%Warning-WIDTHEXPAND: /home/debian/project/emtech/repo_verilator_uvm_2017_example-axi/Vip/amd_axi_stream_vip/xillinxs_vip/axi_vip/axi4stream_vip_if.sv:79:31: Operator VAR 'C_AXI4STREAM_USER_BITS_PER_BYTE' expects 32 bits on the Initial value, but Initial value's CONST '1'h0' generates 1 bits.
+   79 |                               C_AXI4STREAM_USER_BITS_PER_BYTE = 0,
+      |                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+%Warning-WIDTHEXPAND: /home/debian/project/emtech/repo_verilator_uvm_2017_example-axi/Vip/amd_axi_stream_vip/xillinxs_vip/axi_vip/axi4stream_vip_if.sv:80:31: Operator VAR 'C_AXI4STREAM_HAS_ARESETN' expects 32 bits on the Initial value, but Initial value's CONST '1'h1' generates 1 bits.
+   80 |                               C_AXI4STREAM_HAS_ARESETN        = 1)
+      |                               ^~~~~~~~~~~~~~~~~~~~~~~~
+%Warning-WIDTHTRUNC: /home/debian/project/emtech/repo_verilator_uvm_2017_example-axi/Vip/amd_axi_stream_vip/xillinxs_vip/axi_vip/axi4stream_vip_axi4streampc.sv:213:45: Logical operator COND expects 1 bit on the Conditional Test, but Conditional Test's VARREF 'DATA_WIDTH_BYTES' generates 32 bits.
+  213 |   localparam    DATA_MAX = DATA_WIDTH_BYTES ? (DATA_WIDTH_BYTES*8)-1:0;
+      |                                             ^
+%Warning-WIDTHTRUNC: /home/debian/project/emtech/repo_verilator_uvm_2017_example-axi/Vip/amd_axi_stream_vip/xillinxs_vip/axi_vip/axi4stream_vip_axi4streampc.sv:216:39: Logical operator COND expects 1 bit on the Conditional Test, but Conditional Test's VARREF 'STRB_WIDTH' generates 32 bits.
+  216 |   localparam    STRB_MAX = STRB_WIDTH ? STRB_WIDTH-1:0;     
+      |                                       ^
+%Warning-WIDTHTRUNC: /home/debian/project/emtech/repo_verilator_uvm_2017_example-axi/Vip/amd_axi_stream_vip/xillinxs_vip/axi_vip/axi4stream_vip_axi4streampc.sv:217:39: Logical operator COND expects 1 bit on the Conditional Test, but Conditional Test's VARREF 'STRB_WIDTH' generates 32 bits.
+  217 |   localparam    KEEP_MAX = STRB_WIDTH ? STRB_WIDTH-1:0;     
+      |                                       ^
+%Warning-WIDTHTRUNC: /home/debian/project/emtech/repo_verilator_uvm_2017_example-axi/Vip/amd_axi_stream_vip/xillinxs_vip/axi_vip/axi4stream_vip_axi4streampc.sv:218:37: Logical operator COND expects 1 bit on the Conditional Test, but Conditional Test's VARREF 'ID_WIDTH' generates 32 bits.
+  218 |   localparam      ID_MAX = ID_WIDTH ? ID_WIDTH-1:0;         
+      |                                     ^
+%Warning-WIDTHTRUNC: /home/debian/project/emtech/repo_verilator_uvm_2017_example-axi/Vip/amd_axi_stream_vip/xillinxs_vip/axi_vip/axi4stream_vip_axi4streampc.sv:214:39: Logical operator COND expects 1 bit on the Conditional Test, but Conditional Test's VARREF 'DEST_WIDTH' generates 32 bits.
+  214 |   localparam    DEST_MAX = DEST_WIDTH ? DEST_WIDTH-1:0;     
+      |                                       ^
+%Warning-WIDTHTRUNC: /home/debian/project/emtech/repo_verilator_uvm_2017_example-axi/Vip/amd_axi_stream_vip/xillinxs_vip/axi_vip/axi4stream_vip_axi4streampc.sv:219:38: Logical operator COND expects 1 bit on the Conditional Test, but Conditional Test's VARREF 'USER_WIDTH' generates 32 bits.
+  219 |   localparam   TUSER_MAX = USER_WIDTH? USER_WIDTH-1:0;    
+      |                                      ^
+%Warning-WIDTHTRUNC: /home/debian/project/emtech/repo_verilator_uvm_2017_example-axi/Vip/amd_axi_stream_vip/xillinxs_vip/axi_vip/axi4stream_vip_pkg.sv:3463:31: Operator VAR 'C_XIL_AXI4STREAM_SIGNAL_SET' expects 8 bits on the Initial value, but Initial value's CONST '32'hff' generates 32 bits.
+ 3463 |       xil_axi4stream_sigset_t C_XIL_AXI4STREAM_SIGNAL_SET         = 'hFF,         
+      |                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+                     /home/debian/project/emtech/repo_verilator_uvm_2017_example-axi/Vip/amd_axi_stream_vip/xillinxs_vip/axi_vip/xilinxs_vip_pkg.sv:47:1: ... note: In file included from 'xilinxs_vip_pkg.sv'
+%Warning-WIDTHEXPAND: /home/debian/project/emtech/repo_verilator_uvm_2017_example-axi/Vip/amd_axi_stream_vip/xillinxs_vip/axi_vip/axi4stream_vip_pkg.sv:3463:31: Operator VAR 'C_XIL_AXI4STREAM_USER_BITS_PER_BYTE' expects 32 bits on the Initial value, but Initial value's CONST '1'h0' generates 1 bits.
+ 3463 |       int                     C_XIL_AXI4STREAM_USER_BITS_PER_BYTE = 0, 
+      |                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                      /home/debian/project/emtech/repo_verilator_uvm_2017_example-axi/Vip/amd_axi_stream_vip/xillinxs_vip/axi_vip/xilinxs_vip_pkg.sv:47:1: ... note: In file included from 'xilinxs_vip_pkg.sv'
+%Warning-WIDTHEXPAND: /home/debian/project/emtech/repo_verilator_uvm_2017_example-axi/Vip/amd_axi_stream_vip/xillinxs_vip/axi_vip/axi4stream_vip_pkg.sv:3463:31: Operator VAR 'C_XIL_AXI4STREAM_HAS_ARESETN' expects 32 bits on the Initial value, but Initial value's CONST '1'h1' generates 1 bits.
+ 3463 |       int                     C_XIL_AXI4STREAM_HAS_ARESETN        = 1         
+      |                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                      /home/debian/project/emtech/repo_verilator_uvm_2017_example-axi/Vip/amd_axi_stream_vip/xillinxs_vip/axi_vip/xilinxs_vip_pkg.sv:47:1: ... note: In file included from 'xilinxs_vip_pkg.sv'
+%Error: Internal Error: /home/debian/project/emtech/repo_verilator_uvm_2017_example-axi/Vip/amd_axi_stream_vip/xillinxs_vip/axi_vip/axi4stream_vip_if.sv:73:11: ../V3LinkDot.cpp:540: Interface referenced by virtual iface is dead. Dead interfaces have required linking steps skipped
+   73 | interface axi4stream_vip_if  #(
+      |           ^~~~~~~~~~~~~~~~~
+                        ... See the manual at https://verilator.org/verilator_doc.html?v=5.042 for more assistance.
